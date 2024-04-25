@@ -57,6 +57,17 @@ New Policy: RadiusBYME
       Next
        Finish
 
+config t
+aaa new-model
+username backup password pass
+radius-server host 192.168.10.8 key pass
+ip radius source-interface vlan 1
+aaa authorization exec default group radius
+aaa authentication login default group radius local
+line vty 0 14
+ login authentication default
+end
+
 TASK3: Windows 2022 Server Groups
 GlobalGroup:
 admistrator:DomainAdmins:Administrators
